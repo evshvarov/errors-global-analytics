@@ -29,7 +29,10 @@ To refresh the data do:
 ```
 do ##class(shvarov.objectscript.errors.analytics.setup).Run()
 ```
-
+To load test data do:
+```
+do ##class(shvarov.objectscript.errors.analytics.setup).GenerateErrors()
+```
 
 ## Collaboration
 
