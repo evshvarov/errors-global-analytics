@@ -3,13 +3,16 @@ do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
 set sc = ##class(App.Installer).setup() 
 
 zn "IRISAPP"
-zpm "install csvgen"
-zpm "install webterminal"
 zpm "install dsw" 
 zpm "install isc-dev" 
+zpm "install sql-for-error-global"
+zpm "install objectscript-errors"
 do ##class(dev.code).workdir("/irisdev/app/src")
 do EnableDeepSee^%SYS.cspServer("/csp/irisapp/")
-zpm "install samples-bi"
+do $SYSTEM.OBJ.Load("/opt/irisapp//src/shvarov/objectscript/errors/analytics/setup.cls", "ck")
+do ##class(shvarov.objectscript.errors.analytics.setup).GenerateErrors()
+do $System.OBJ.LoadDir("/opt/irisapp/src","ck",,1)
+do ##class(shvarov.objectscript.errors.analytics.setup).Run()
 
 zn "%SYS" 
 w ##class(Security.Users).UnExpireUserPasswords("*")

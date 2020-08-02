@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="objectscript-sample.ZPM">
+  <Document name="objectscript-errors-analytics.ZPM">
     <Module>
-      <Name>objectscript-sample</Name>
-      <Version>0.0.1</Version>
+      <Name>objectscript-errors-analytics</Name>
+      <Version>1.0.0</Version>
       <Packaging>module</Packaging>
+      <Dependencies>
+      <ModuleReference>
+          <Name>dsw</Name>
+          <Version>2.1.*</Version>
+        </ModuleReference>
+        <ModuleReference>
+          <Name>sql-for-error-global</Name>
+          <Version>1.0.2</Version>
+        </ModuleReference>
+        <ModuleReference>
+          <Name>objectscript-errors</Name>
+          <Version>1.0.*</Version>
+        </ModuleReference>
+      </Dependencies>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="PackageSample.PKG"/>
+      <Invokes>
+        <Invoke Class="shvarov.objectscript.errors.analytics.setup" Method="Run"></Invoke>
+      </Invokes>
+      <Resource Name="shvarov.objectscript.errors.analytics.PKG"/>
+      <Resource Name="Errors-Daily.pivot.DFI" />
+      <Resource Name="Errors-Error Types.pivot.DFI" />
+      <Resource Name="Errors-Overview.dashboard.DFI" />
+      <Resource Name="Errors-Total.pivot.DFI" />
     </Module>
   </Document>
 </Export>
