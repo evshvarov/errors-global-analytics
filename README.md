@@ -1,5 +1,7 @@
 ## errors-global-analytics
 Shows errors in ^ERRORS global in an IRIS Analytics Dashboard
+![errors dashboard](https://user-images.githubusercontent.com/2781759/89131782-051dec80-d518-11ea-8b30-8e0acc5235e9.png "Errors dashboard")
+<img width="1056" alt="Screenshot 2020-08-02 23 17 27" src="https://user-images.githubusercontent.com/2781759/89131792-094a0a00-d518-11ea-9b96-2417e6fc8e16.png">
 
 ## Installation ZPM
 
