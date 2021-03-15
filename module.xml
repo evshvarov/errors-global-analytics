@@ -3,13 +3,13 @@
   <Document name="objectscript-errors-analytics.ZPM">
     <Module>
       <Name>objectscript-errors-analytics</Name>
-      <Version>1.0.1</Version>
+      <Version>1.0.2</Version>
       <Description>Analytics for the bugs in ^ERRORS</Description>
       <Packaging>module</Packaging>
       <Dependencies>
       <ModuleReference>
           <Name>dsw</Name>
-          <Version>2.1.*</Version>
+          <Version>3.*</Version>
         </ModuleReference>
         <ModuleReference>
           <Name>sql-for-error-global</Name>
@@ -26,7 +26,7 @@
       </Invokes>
       <Resource Name="shvarov.objectscript.errors.analytics.PKG"/>
       <Resource Name="Errors-Daily.pivot.DFI" />
-      <Resource Name="Errors-Error Types.pivot.DFI" />
+      <Resource Name="Errors-ErrorTypes.pivot.DFI" />
       <Resource Name="Errors-Overview.dashboard.DFI" />
       <Resource Name="Errors-Total.pivot.DFI" />
     </Module>
