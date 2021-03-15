@@ -3,6 +3,10 @@ Shows errors in ^ERRORS global in an IRIS Analytics Dashboard
 ![errors dashboard](https://user-images.githubusercontent.com/2781759/89131782-051dec80-d518-11ea-8b30-8e0acc5235e9.png "Errors dashboard")
 <img width="943" alt="Screenshot 2020-08-02 at 23 33 36" src="https://user-images.githubusercontent.com/2781759/89131862-98efb880-d518-11ea-9b59-c3971f691ad1.png">
 
+## demo
+[Online Demo](http://errors-analytics.demo.community.intersystems.com/dsw/index.html#/IRISAPP)
+_SYSTEM SYS
+
 
 ## Installation ZPM
 
