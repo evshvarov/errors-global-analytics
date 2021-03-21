@@ -3,7 +3,7 @@
   <Document name="objectscript-errors-analytics.ZPM">
     <Module>
       <Name>objectscript-errors-analytics</Name>
-      <Version>1.0.2</Version>
+      <Version>1.0.3</Version>
       <Description>Analytics for the bugs in ^ERRORS</Description>
       <Packaging>module</Packaging>
       <Dependencies>
