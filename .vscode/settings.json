@@ -1,12 +1,12 @@
 {
     "files.associations": {
-    
+
         "Dockerfile*": "dockerfile",
         "iris.script": "objectscript"
       },
     "objectscript.conn" :{
-      "ns": "IRISAPP",
-      "active": false,
+      "ns": "USER",
+      "active": true,
       "username": "_SYSTEM",
       "password": "SYS",
       "docker-compose": {
@@ -14,10 +14,10 @@
         "internalPort": 52773
       },
       "links": {
-        "DSW": "http://localhost:55016/dsw/index.html#/IRISAPP",
-        "Dashboards Portal": "http://localhost:${port}/csp/irisapp/_DeepSee.UserPortal.Home.zen",
-        "Analyzer": "http://localhost:${port}/csp/irisapp/_DeepSee.UserPortal.Analyzer.zen",
-        "Architect": "http://localhost:${port}/csp/irisapp/_DeepSee.UI.Architect.zen?$NAMESPACE=IRISAPP"
+        "DSW": "http://localhost:55016/dsw/index.html#/USER",
+        "Dashboards Portal": "http://localhost:${port}/csp/user/_DeepSee.UserPortal.Home.zen",
+        "Analyzer": "http://localhost:${port}/csp/user/_DeepSee.UserPortal.Analyzer.zen",
+        "Architect": "http://localhost:${port}/csp/user/_DeepSee.UI.Architect.zen?$NAMESPACE=USER"
       }
     },
     "objectscript.conn.active": true

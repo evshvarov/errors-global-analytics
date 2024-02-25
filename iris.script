@@ -1,29 +1,29 @@
-zn "%SYS"
-Do ##class(Security.Users).UnExpireUserPasswords("*")
-; run installer to create namespace
-do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
-set sc = ##class(App.Installer).setup() 
+    zn "%SYS"
+    Do ##class(Security.Users).UnExpireUserPasswords("*")
 
-zn "IRISAPP"
-zpm "install isc-dev" 
-write "setting up the workdir for dev.code to ""/irisdev/app/src"""
-do ##class(dev.code).workdir("/irisdev/app/src")
-write "enabling IRIS BI in IRISAPP"
-do EnableDeepSee^%SYS.cspServer("/csp/irisapp/")
+    zn "USER"
+    zpm "install isc-dev"
+    write "setting up the workdir for dev.code to ""/irisdev/app/src"""
+    do ##class(dev.code).workdir("/irisdev/app/src")
+    write "enabling IRIS BI in USER"
+    do EnableDeepSee^%SYS.cspServer("/csp/user/")
 
-write "loading the package"
-zpm "load /opt/irisapp/ -v"
-write "generating errors"
-do ##class(shvarov.objectscript.errors.analytics.setup).GenerateErrors()
-do ##class(shvarov.objectscript.errors.analytics.setup).Run()
+    write "loading the package"
+    zpm "load /home/irisowner/dev -v"
+    write "generating errors"
+    do ##class(shvarov.objectscript.errors.analytics.setup).GenerateErrors()
+    do ##class(shvarov.objectscript.errors.analytics.setup).Run()
 
-zn "%SYS" 
-w ##class(Security.Users).UnExpireUserPasswords("*")
-write "Modifying MDX2JSON application security...",! 
-set webName = "/mdx2json" 
-set webProperties("AutheEnabled") = 64 
-set webProperties("MatchRoles")=":%DB_IRISAPP" 
-set sc = ##class(Security.Applications).Modify(webName, .webProperties) 
-if sc<1 write $SYSTEM.OBJ.DisplayError(sc) 
+    zpm "install git-source-control"
+    do ##class(%Studio.SourceControl.Interface).SourceControlClassSet("SourceControl.Git.Extension")
 
-halt
+
+    zn "%SYS"
+    write "Modifying MDX2JSON application security...",!
+    set webName = "/mdx2json"
+    set webProperties("AutheEnabled") = 64
+    set webProperties("MatchRoles")=":%DB_USER"
+    set sc = ##class(Security.Applications).Modify(webName, .webProperties)
+    if sc<1 write $SYSTEM.OBJ.DisplayError(sc)
+
+    halt
